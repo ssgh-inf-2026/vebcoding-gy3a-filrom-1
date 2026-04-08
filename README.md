@@ -9,7 +9,7 @@ Doplňte název aplikace.
 - Roman
 
 ## Téma aplikace
-Stručně napište, co bude vaše aplikace dělat.
+Kalkulačka známek.
 
 ## Cílový uživatel
 Pro koho je aplikace určená?
