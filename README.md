@@ -5,8 +5,8 @@
 Doplňte název aplikace.
 
 ## Členové týmu
-- Jméno 1
-- Jméno 2
+- Filip
+- Roman
 
 ## Téma aplikace
 Stručně napište, co bude vaše aplikace dělat.
