@@ -12,7 +12,7 @@ Doplňte název aplikace.
 Kalkulačka známek.
 
 ## Cílový uživatel
-Pro koho je aplikace určená?
+Student, učitel, rodič.
 
 ## 3 plánované funkce
 1. Doplňte
