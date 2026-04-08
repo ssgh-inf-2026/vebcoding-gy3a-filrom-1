@@ -5,8 +5,8 @@
 Doplňte název aplikace.
 
 ## Členové týmu
-- Filip
-- Roman
+- Filip.
+- Roman.
 
 ## Téma aplikace
 Kalkulačka známek.
