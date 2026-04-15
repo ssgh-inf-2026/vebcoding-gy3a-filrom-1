@@ -15,9 +15,9 @@ Kalkulačka známek.
 Student, učitel, rodič.
 
 ## 3 plánované funkce
-1. Doplňte
-2. Doplňte
-3. Doplňte
+1. Spočítá aritmetický průměr známek
+2. Spočítá vážený průměr známek
+3. procentuální úspěšnost
 
 ## Průběh práce
 
