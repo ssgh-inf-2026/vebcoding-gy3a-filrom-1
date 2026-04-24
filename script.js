@@ -1,33 +1,46 @@
-// 1. Najdeme si prvky na stránce, se kterými budeme pracovat
 const tlacitko = document.getElementById("testButton");
 const vstup = document.getElementById("userInput");
 const vystup = document.getElementById("result");
+const kontejner = document.getElementById("resultContainer");
 
-// 2. Nastavíme, co se má stát po kliknutí na tlačítko
 tlacitko.onclick = function() {
-    // Načteme text ze vstupu
     const text = vstup.value.trim();
 
-    // Kontrola, jestli uživatel něco zadal
+    // Resetujeme styly při každém kliknutí
+    kontejner.classList.add("hidden");
+    vystup.style.color = ""; 
+
     if (text === "") {
-        vystup.innerText = "Chyba: Zadej prosím nějaké známky.";
-        vystup.style.color = "red";
-        return; // Ukončíme funkci, aby kód nepokračoval dál
+        ukazVysledek("Zadej známky!", "text-red-500");
+        return;
     }
 
-    // Převedeme text na pole čísel
-    // Rozdělíme text podle mezer nebo čárek a převedeme na desetinná čísla
-    const znamky = text.split(/[\s,]+/).map(Number);
-
-    // Výpočet průměru
+    // Převedeme vstup na pole čísel (podporuje mezery i čárky)
+    const casti = text.split(/[\s,]+/);
     let soucet = 0;
-    for (let i = 0; i < znamky.length; i++) {
-        soucet = soucet + znamky[i];
+    let pocet = 0;
+
+    for (let i = 0; i < casti.length; i++) {
+        const cislo = parseFloat(casti[i]);
+
+        // Kontrola, zda je to číslo 1 až 5
+        if (isNaN(cislo) || cislo < 1 || cislo > 5) {
+            ukazVysledek("Jen známky 1-5!", "text-orange-500");
+            return;
+        }
+        soucet += cislo;
+        pocet++;
     }
 
-    const prumer = soucet / znamky.length;
-
-    // 3. Zobrazení výsledku
-    vystup.innerText = "Tvůj průměr je: " + prumer.toFixed(2);
-    vystup.style.color = "black";
+    const prumer = (soucet / pocet).toFixed(2);
+    ukazVysledek(prumer, "text-indigo-700");
 };
+
+// Funkce, která zobrazí kontejner a nastaví text
+function ukazVysledek(text, barvaClass) {
+    kontejner.classList.remove("hidden");
+    vystup.textContent = text;
+    
+    // Odstraníme staré barvy a přidáme novou
+    vystup.className = `text-center text-5xl font-black mt-2 ${barvaClass}`;
+}
